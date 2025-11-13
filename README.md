@@ -63,7 +63,7 @@ Data_Preprocessing/
 
 1. **Clone the repository**
    ```bash
-   cd /Users/cococe/Desktop/Data_Preprocessing
+   cd /Data_Preprocessing
    ```
 
 2. **Create and activate conda environment**
