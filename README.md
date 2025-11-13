@@ -4,7 +4,7 @@ A comprehensive authentication system that combines **Face Recognition**, **Voic
 
 ---
 
-## 🎯 What This Project Does
+## What This Project Does
 
 This system provides a **3-stage authentication and prediction pipeline**:
 
@@ -16,7 +16,7 @@ All three stages must pass for complete authentication and prediction approval.
 
 ---
 
-## 🏗️ Project Structure
+##  Project Structure
 
 ```
 Data_Preprocessing/
@@ -52,7 +52,7 @@ Data_Preprocessing/
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -89,7 +89,7 @@ Data_Preprocessing/
 
 ---
 
-## 📋 How to Run
+## How to Run
 
 ### Option 1: Run Complete System Demo (Recommended)
 
@@ -154,7 +154,7 @@ jupyter notebook product_category_prediction.ipynb
 
 ---
 
-## 🔧 System Requirements
+## System Requirements
 
 ### Models
 - **Face Recognition Model**: 128-dimensional face encodings, SVM classifier
@@ -174,7 +174,7 @@ jupyter notebook product_category_prediction.ipynb
 
 ---
 
-## 📊 Model Performance
+## Model Performance
 
 - **Face Recognition**: 81.20% confidence on test images
 - **Voice Verification**: 92.89% confidence with data augmentation
@@ -187,7 +187,7 @@ jupyter notebook product_category_prediction.ipynb
 
 ---
 
-## 💡 Usage Example
+## Usage Example
 
 ```python
 from auth_system import AuthenticatedPredictionSystem
@@ -232,7 +232,7 @@ else:
 
 ---
 
-## 🛠️ Troubleshooting
+## Troubleshooting
 
 ### "ModuleNotFoundError: No module named 'face_recognition'"
 ```bash
@@ -252,7 +252,7 @@ Check that audio files are named correctly:
 
 ---
 
-## 📝 Features
+## Features
 
 ✅ Multi-factor authentication (Face + Voice)  
 ✅ Product category prediction integration  
@@ -264,7 +264,7 @@ Check that audio files are named correctly:
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 1. Train models with your own data
 2. Adjust thresholds in `auth_system.py`
@@ -273,13 +273,13 @@ Check that audio files are named correctly:
 
 ---
 
-## 📄 License
+## License
 
 MIT License - Feel free to use and modify
 
 ---
 
-## 👥 Authors
+## Authors
 
 - Face Recognition Module
 - Voice Verification Module
@@ -288,7 +288,7 @@ MIT License - Feel free to use and modify
 
 ---
 
-## 📞 Support
+## Support
 
 For issues or questions:
 1. Check the troubleshooting section
