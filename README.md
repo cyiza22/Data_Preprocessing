@@ -112,48 +112,6 @@ python demo.py
 ✅ ALL CHECKS PASSED
 ```
 
----
-
-### Option 2: Run Automated Tests
-
-```bash
-cd integrated_system
-conda activate facial_rec
-python test_system.py
-```
-
-**What it does:**
-- Tests complete integrated flow
-- Tests each component individually
-- Shows detailed metrics for debugging
-
----
-
-### Option 3: Train Models from Scratch
-
-#### Train Face Recognition Model
-```bash
-cd face_recognition_project
-jupyter notebook facial_recognition.ipynb
-# Run all cells to train and save face_recognition_model.pkl
-```
-
-#### Train Voice Verification Model
-```bash
-cd voiceprint_verification_model/notebook
-jupyter notebook voiceprint_training.ipynb
-# Run all cells to train and save voice_model.pkl, scaler.pkl, label_encoder.pkl
-```
-
-#### Train Product Category Prediction Model
-```bash
-cd Recommendation_project
-jupyter notebook product_category_prediction.ipynb
-# Run all cells to train and save best_model_XGBoost.pkl and artifacts
-```
-
----
-
 ## System Requirements
 
 ### Models
@@ -186,52 +144,6 @@ jupyter notebook product_category_prediction.ipynb
 - Voice Confidence: ≥ 50%
 
 ---
-
-## Usage Example
-
-```python
-from auth_system import AuthenticatedPredictionSystem
-import pandas as pd
-
-# Initialize system
-system = AuthenticatedPredictionSystem(
-    face_model_path='../face_recognition_project/face_recognition_model.pkl',
-    voice_model_path='../voiceprint_verification_model/notebook/voice_model.pkl',
-    product_model_path='../Recommendation_project/best_model_XGBoost.pkl',
-    product_scaler_path='../Recommendation_project/product_category_scaler.pkl',
-    product_artifacts_path='../Recommendation_project/product_category_artifacts.pkl'
-)
-
-# Load known face encodings
-df = pd.read_csv('../face_recognition_project/image_features.csv')
-known_encodings = df[[f'feature_{i}' for i in range(128)]].values
-
-# Prepare customer data
-customer_data = {
-    'purchase_amount': 450.0,
-    'customer_rating': 4.5,
-    'engagement_score': 85,
-    # ... other 14 features
-}
-
-# Run authentication
-result = system.complete_flow(
-    image_path='path/to/face.jpg',
-    customer_data=customer_data,
-    audio_path='path/to/voice.wav',
-    known_encodings=known_encodings
-)
-
-# Check result
-if result['success']:
-    print(f"User: {result['user']}")
-    print(f"Predicted Category: {result['prediction']}")
-else:
-    print("Authentication failed")
-```
-
----
-
 ## Troubleshooting
 
 ### "ModuleNotFoundError: No module named 'face_recognition'"

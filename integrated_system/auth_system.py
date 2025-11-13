@@ -403,27 +403,3 @@ class AuthenticatedPredictionSystem:
         
         return result
 
-
-def main():
-    """Example usage of the authenticated prediction system"""
-    
-    # Initialize system
-    system = AuthenticatedPredictionSystem()
-    
-    # Example: Load known face encodings (you'll need these from your training data)
-    # This should be loaded from your face recognition training
-    known_encodings = []  # Add your known encodings here
-    
-    # Example flow
-    result = system.complete_flow(
-        image_path='path/to/user/photo.jpg',
-        customer_data=[25, 50000, 1, 2],  # Example customer features
-        audio_path='path/to/voice/sample.wav',
-        known_encodings=known_encodings
-    )
-    
-    return result
-
-
-if __name__ == "__main__":
-    main()
