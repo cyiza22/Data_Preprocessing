@@ -49,7 +49,7 @@ class AuthenticatedPredictionSystem:
         # Configurable thresholds
         self.FACE_CONFIDENCE_THRESHOLD = 0.60
         self.FACE_DISTANCE_THRESHOLD = 0.6
-        self.VOICE_THRESHOLD = 0.5  # Adjust based on your voice model
+        self.VOICE_THRESHOLD = 0.5
         
     def _load_models(self, face_path, voice_path, product_path, product_scaler_path, product_artifacts_path):
         """Load all three models"""
@@ -59,7 +59,7 @@ class AuthenticatedPredictionSystem:
                 face_data = pickle.load(f)
                 self.face_model = face_data['classifier']
                 self.authorized_users = face_data['label_encoder']
-            print(f"✅ Face model loaded. Authorized users: {self.authorized_users}")
+            print(f" Face model loaded. Authorized users: {self.authorized_users}")
         except Exception as e:
             print(f"❌ Error loading face model: {e}")
             
@@ -204,8 +204,8 @@ class AuthenticatedPredictionSystem:
             predicted_category = category_encoder.inverse_transform([prediction])[0]
             confidence = probabilities[prediction]
             
-            print(f"🎯 Predicted Category: {predicted_category}")
-            print(f"📊 Confidence: {confidence:.2%}")
+            print(f" Predicted Category: {predicted_category}")
+            print(f" Confidence: {confidence:.2%}")
             
             # Show top 3 categories
             top_3_idx = np.argsort(probabilities)[-3:][::-1]
@@ -239,7 +239,7 @@ class AuthenticatedPredictionSystem:
         
         # Check if voice model is available
         if not hasattr(self, 'voice_model') or self.voice_model is None:
-            print("⚠️  Voice model not available - SKIPPING voice verification")
+            print("  Voice model not available - SKIPPING voice verification")
             print("✅ Voice verification BYPASSED (model not loaded)")
             return True, 1.0
         
@@ -296,8 +296,8 @@ class AuthenticatedPredictionSystem:
                 # For now, we'll just verify the speaker is in our known set
                 is_verified = confidence >= self.VOICE_THRESHOLD
                 
-                print(f"🎤 Predicted Speaker: {predicted_speaker}")
-                print(f"📊 Confidence: {confidence:.2%}")
+                print(f" Predicted Speaker: {predicted_speaker}")
+                print(f" Confidence: {confidence:.2%}")
                 
                 if is_verified:
                     print(f"✅ VOICE VERIFIED - Speaker: {predicted_speaker}")
@@ -331,7 +331,7 @@ class AuthenticatedPredictionSystem:
             dict: Complete results of the authentication flow
         """
         print("\n" + "="*70)
-        print("🚀 STARTING AUTHENTICATED PREDICTION FLOW")
+        print(" STARTING AUTHENTICATED PREDICTION FLOW")
         print("="*70)
         
         result = {
@@ -391,7 +391,7 @@ class AuthenticatedPredictionSystem:
         if result['success']:
             print(f"✅ ALL CHECKS PASSED")
             print(f"👤 Authorized User: {user_name}")
-            print(f"🎯 Predicted Product: {predicted_product}")
+            print(f" Predicted Product: {predicted_product}")
             print(f"🔒 Prediction APPROVED and CONFIRMED")
         else:
             print(f"❌ AUTHENTICATION FLOW FAILED")

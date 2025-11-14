@@ -15,7 +15,6 @@ from auth_system import AuthenticatedPredictionSystem
 def load_known_face_encodings():
     """
     Load the face encodings from your training data
-    These are needed for the face distance calculation
     """
     try:
         # Load from your image_features.csv or training data
@@ -32,9 +31,8 @@ def demo_api_style():
     """
     Demo: API-style usage for integration 
     """
-    print("\n" + "🎬 "*20)
+  
     print("DEMO: API-STYLE INTEGRATION EXAMPLE")
-    print("🎬 "*20 + "\n")
     
     # Initialize once
     system = AuthenticatedPredictionSystem()
@@ -42,7 +40,7 @@ def demo_api_style():
     
     # Simulate API request
     request_data = {
-        'user_image': '../face_recognition_project/faces/Christian.jpg',
+        'user_image': '../face_recognition_project/faces/henriette_normal.jpeg',
         'voice_sample': '../voiceprint_verification_model/data/raw/audio/member 1/Yes_approve.opus',
         'prediction_input': {
             'purchase_amount': 420.0,
@@ -64,7 +62,7 @@ def demo_api_style():
         }
     }
     
-    print("📥 Incoming Request:")
+    print("Incoming Request:")
     print("-" * 70)
     for key, value in request_data.items():
         print(f"  {key}: {value}")
@@ -89,7 +87,7 @@ def demo_api_style():
         }
     }
     
-    print("\n📤 API Response:")
+    print("\n API Response:")
     print("-" * 70)
     import json
     print(json.dumps(response, indent=2))
