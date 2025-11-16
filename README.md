@@ -152,18 +152,6 @@ conda activate facial_rec
 pip install face-recognition
 ```
 
-### "No such file or directory" for audio files
-Check that audio files are named correctly:
-- Use `Yes_approve.opus` not `Approve_yes.opus`
-- Files are in: `voiceprint_verification_model/data/raw/audio/member X/`
-
-### Voice model shows low confidence
-- Retrain the model with more audio samples
-- Run `voiceprint_training.ipynb` with data augmentation
-- Check audio quality (clear speech, minimal background noise)
-
----
-
 ## Features
 
 ✅ Multi-factor authentication (Face + Voice)  
@@ -173,37 +161,4 @@ Check that audio files are named correctly:
 ✅ EXIF orientation handling for images  
 ✅ Comprehensive logging and error handling  
 ✅ API-ready architecture  
-
----
-
-## Contributing
-
-1. Train models with your own data
-2. Adjust thresholds in `auth_system.py`
-3. Add more authentication factors
-4. Improve model accuracy
-
----
-
-## License
-
-MIT License - Feel free to use and modify
-
----
-
-## Authors
-
-- Face Recognition Module
-- Voice Verification Module
-- Product Recommendation Module
-- Integrated Authentication System
-
----
-
-## Support
-
-For issues or questions:
-1. Check the troubleshooting section
-2. Review individual module READMEs
-3. Run `test_system.py` to identify failing components
 

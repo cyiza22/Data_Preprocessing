@@ -40,7 +40,7 @@ def demo_api_style():
     
     # Simulate API request
     request_data = {
-        'user_image': '../face_recognition_project/faces/henriette_normal.jpeg',
+        'user_image': '../face_recognition_project/faces/limpho-suprised.jpeg',
         'voice_sample': '../voiceprint_verification_model/data/raw/audio/member 1/Yes_approve.opus',
         'prediction_input': {
             'purchase_amount': 420.0,
